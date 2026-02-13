@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+build/
+
+#ML Models
+*.joblib
+*.pkl
+
+#Data
+data/
+*.csv
+
+#OS
+.DS_Store
+Thumbs.db
