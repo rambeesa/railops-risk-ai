@@ -1,19 +1,17 @@
 RailOps AI Command Center is an end-to-end AI application that predicts operational risk in real time and presents actionable insights through an enterprise dashboard.
-
 The system demonstrates how machine learning can support safety-critical operations by transforming telemetry data into decision intelligence for operators.
-
 This project focuses on production-style AI engineering — integrating model inference, APIs, visualization, and monitoring into a unified platform.
 
-🎯 Key Features
-🧠 AI & Prediction
 
+Key Features
+
+AI & Prediction
 Real-time risk prediction using ML model
 Probability-based risk scoring
 Configurable decision thresholds
 AI recommendations based on predicted risk
 
-📊 Operations Dashboard
-
+Operations Dashboard
 Multi-region risk visualization
 Track risk heatmap
 Live incident feed
@@ -21,21 +19,18 @@ Streaming predictions console
 Event replay timeline
 KPI metrics panel
 
-📡 System Monitoring
-
+System Monitoring
 Backend telemetry monitoring
 Health checks
 Prediction activity tracking
 
-⚙️ Backend Services
-
+ Backend Services
 FastAPI inference service
 REST endpoints for predictions
 Modular model loading
 Logging and error handling
 
-🏗️ Architecture
-
+Architecture
 Frontend (React Dashboard)
         ↓
 Backend API (FastAPI)
@@ -46,17 +41,14 @@ Prediction & Monitoring Layer
 
 Data flows from input features → model inference → risk output → visualization → operator actions.
 
-🛠️ Tech Stack
-
+Tech Stack
 Backend
-
 Python
 FastAPI
 Scikit-learn
 Joblib
 
 Frontend
-
 React
 Vite
 TypeScript
@@ -64,15 +56,17 @@ Recharts
 DevOps & Tooling
 
 Git
-
 Docker (optional)
 MLOps foundations (versioning, monitoring)
 
-🚀 Getting Started
+ Getting Started
 Prerequisites
 Python 3.9+
 Node.js 18+
 npm or yarn
+
+Download Data from
+https://data.transportation.gov/Railroads/Rail-Equipment-Accident-Incident-Data-Form-54-/85tf-25kj/about_data
 
 Backend Setup
 cd backend
@@ -96,7 +90,7 @@ npm run dev
 Open:
 http://localhost:5173
 
-🧪 Using the System
+Using the System
 Enter feature values in the prediction console
 Click Predict Risk
 View:
@@ -107,7 +101,7 @@ Trend updates
 
 Recommendations
 
-📦 Project Structure
+Project Structure
 railops-risk/
 ├── backend/
 │   ├── app/
@@ -118,13 +112,11 @@ railops-risk/
 ├── docker-compose.yml
 └── README.md
 
-🧠 Motivation
-
+Motivation:
 Safety-critical industries such as rail, aviation, energy, and manufacturing require AI systems that are reliable, interpreable, and operationally actionable.
 This project explores how AI can augment human decision-making in infrastructure environments where reliability matters.
 
-🔮 Future Improvements
-
+Future Improvements
 Model versioning and registry
 Drift detection and monitoring
 Streaming telemetry ingestion
@@ -132,5 +124,5 @@ Map-based visualization
 Authentication and role-based access
 Cloud deployment
 
-📄 License
+License
 For educational and demonstration purposes.
