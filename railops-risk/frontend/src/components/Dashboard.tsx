@@ -57,6 +57,15 @@ const MOCK_RECOMMENDATIONS = [
 
 const REGION_NAMES = ["North", "South", "Central", "East", "West"];
 
+/** Labels and guidance for the 5 risk prediction inputs (must match backend model order). */
+const RISK_FEATURE_LABELS: { name: string; placeholder: string; hint: string }[] = [
+  { name: "Severity / incident type", placeholder: "0–2", hint: "Encoded severity (e.g. 0=low, 1=medium, 2=high)" },
+  { name: "Equipment condition score", placeholder: "0–3", hint: "Normalized condition (higher = worse)" },
+  { name: "Environmental factor", placeholder: "0–2", hint: "Weather/visibility (e.g. 0=clear, 2=adverse)" },
+  { name: "Traffic / volume factor", placeholder: "0–5", hint: "Usage or traffic level (normalized)" },
+  { name: "Human / procedural factor", placeholder: "0–2", hint: "Safety/training score (higher = more risk)" },
+];
+
 export default function Dashboard() {
   const [features, setFeatures] = useState<number[]>([0.5, 1.2, 0.3, 2.1, 0.8]);
   const [events, setEvents] = useState<RiskEvent[]>([]);
@@ -181,7 +190,7 @@ export default function Dashboard() {
   return (
     <div style={{ padding: 24, fontFamily: "Arial", background: "#fafafa", minHeight: "100vh" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <img src="/bnsf-logo.png" alt="BNSF Railway" style={{ height: 48, width: "auto", objectFit: "contain" }} />
+        <img src="/logo.jpg" alt="Cleveland Light Rail" style={{ height: 48, width: "auto", objectFit: "contain" }} />
         <div>
           <div style={{ fontSize: 34, fontWeight: 800 }}>RailOps Command Center</div>
           <div style={{ opacity: 0.7 }}>Enterprise Rail Safety Risk Prediction Dashboard</div>
@@ -228,17 +237,25 @@ export default function Dashboard() {
             boxShadow: "0 2px 10px rgba(0,0,0,0.04)",
           }}
         >
-          <div style={{ fontSize: 13, opacity: 0.7, marginBottom: 10 }}>Risk Prediction Console</div>
+          <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 4 }}>Risk Prediction Console</div>
+          <div style={{ fontSize: 12, opacity: 0.75, marginBottom: 12 }}>
+            Enter the 5 rail risk factors below; then click Predict Risk to get a live prediction.
+          </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 10 }}>
             {features.map((v, i) => (
-              <input
-                key={i}
-                type="number"
-                value={v}
-                onChange={(e) => updateFeature(i, Number(e.target.value))}
-                style={{ padding: 10, borderRadius: 10, border: "1px solid #ddd" }}
-                placeholder={`Feature ${i + 1}`}
-              />
+              <div key={i} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                <label style={{ fontSize: 11, fontWeight: 600, color: "#333" }} title={RISK_FEATURE_LABELS[i].hint}>
+                  {RISK_FEATURE_LABELS[i].name}
+                </label>
+                <input
+                  type="number"
+                  value={v}
+                  onChange={(e) => updateFeature(i, Number(e.target.value))}
+                  style={{ padding: 10, borderRadius: 10, border: "1px solid #ddd" }}
+                  placeholder={RISK_FEATURE_LABELS[i].placeholder}
+                  title={RISK_FEATURE_LABELS[i].hint}
+                />
+              </div>
             ))}
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 12 }}>
