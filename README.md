@@ -2,6 +2,7 @@ RailOps AI Command Center is an end-to-end AI application that predicts operatio
 The system demonstrates how machine learning can support safety-critical operations by transforming telemetry data into decision intelligence for operators.
 This project focuses on production-style AI engineering — integrating model inference, APIs, visualization, and monitoring into a unified platform.
 
+Author : Ramakanth Beesa
 
 =>Key Features
 
