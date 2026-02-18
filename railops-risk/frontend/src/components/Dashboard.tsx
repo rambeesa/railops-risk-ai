@@ -190,10 +190,10 @@ export default function Dashboard() {
   return (
     <div style={{ padding: 24, fontFamily: "Arial", background: "#fafafa", minHeight: "100vh" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <img src="/logo.jpg" alt="Cleveland Light Rail" style={{ height: 48, width: "auto", objectFit: "contain" }} />
+        <img src="/bnsf.jpg" alt="Bnsf" style={{ height: 48, width: "auto", objectFit: "contain" }} />
         <div>
           <div style={{ fontSize: 34, fontWeight: 800 }}>RailOps Command Center</div>
-          <div style={{ opacity: 0.7 }}>Enterprise Rail Safety Risk Prediction Dashboard</div>
+          <div style={{ opacity: 0.7 }}>Enterprise Rail Safety Risk Prediction Dashboard by Ramakanth</div>
         </div>
       </div>
 
